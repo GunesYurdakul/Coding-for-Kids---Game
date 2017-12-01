@@ -21,8 +21,6 @@
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
-  <p>{{tes}}</p>
-
 <ion-card padding-vertical>
       
   <ion-list text-center>
@@ -56,7 +54,7 @@
 <ion-card padding-vertical (click)="set_function()">
   <p>Function</p>
     <ion-list text-center>
-      <button ion-button *ngFor="let item of function_command_names">
+      <button ion-button *ngFor="let item of function_command_names" color={{get_color(item)}} (click)="delete_function(item)" >
         <ion-icon name="{{item}}"></ion-icon>
       </button>
     </ion-list>
@@ -65,7 +63,7 @@
 <ion-card padding-vertical (click)="reset_function()">
     <p>Command</p>
   <ion-list text-center>
-    <button ion-button *ngFor="let item of command_names">
+    <button ion-button *ngFor="let item of command_names" color={{get_color(item)}} (click)="delete_command(item)" >
       <ion-icon name="{{item}}"></ion-icon>
     </button>
   </ion-list>

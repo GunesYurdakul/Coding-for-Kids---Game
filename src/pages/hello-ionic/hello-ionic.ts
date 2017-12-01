@@ -16,6 +16,7 @@ export class HelloIonicPage {
   constructor() {
   }
   left() {
+    
     if(this.is_function){
       this.tes = "left"
       this.function_list.push([0,-1]);
@@ -73,6 +74,7 @@ export class HelloIonicPage {
   }
 
   function() {
+    
     if(this.is_function){
       this.tes = "function"
       this.function_list.push([3,3]);
@@ -92,7 +94,6 @@ export class HelloIonicPage {
   }
 
   unlock() {
-   
     if(this.is_function){
       this.tes = "unlock"
       this.function_list.push([2,2]);
@@ -112,5 +113,31 @@ export class HelloIonicPage {
 
   reset_function(){
     this.is_function=0   
+  }
+  delete_function(icon){
+    let counter=0
+      while(this.function_command_names[counter]!=icon){
+        counter++
+      }
+      this.function_command_names.splice(counter,1)
+      this.function_list.splice(counter,1)      
+      this.tes = "delete1"
+  }
+  delete_command(icon){
+    let counter=0
+      while(this.command_names[counter]!=icon){
+        counter++
+      }
+      this.command_names.splice(counter,1)
+      this.list.splice(counter,1)      
+      this.tes = "delete2"      
+    }
+  get_color(item){
+    if(item==="unlock")
+      return "secondary"
+    else if(item==="albums")
+      return "blueCustom"
+    else 
+      return "primary"
   }
 }
