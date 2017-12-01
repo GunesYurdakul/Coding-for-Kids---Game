@@ -23,10 +23,10 @@
 
   <p>{{tes}}</p>
 
-  <ion-card padding-vertical>
+<ion-card padding-vertical>
       
-    <ion-list text-center>
-        
+  <ion-list text-center>
+      
     <button ion-button (click)="left()" >
       <ion-icon name="arrow-back" ></ion-icon>
     </button>
@@ -50,6 +50,23 @@
     <button ion-button color="secondary" (click)="unlock()">
       <ion-icon name="unlock"></ion-icon>
     </button>
-</ion-list>
+  </ion-list>
 </ion-card>
+
+<ion-card padding-vertical (click)="set_function()">
+    <ion-list text-center>
+      <button ion-button *ngFor="let item of function_command_names">
+        <ion-icon name="{{item}}"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-card>
+
+<ion-card padding-vertical (click)="reset_function()">
+  <ion-list text-center>
+    <button ion-button *ngFor="let item of command_names">
+      <ion-icon name="{{item}}"></ion-icon>
+    </button>
+  </ion-list>
+</ion-card>
+
 </ion-content>
