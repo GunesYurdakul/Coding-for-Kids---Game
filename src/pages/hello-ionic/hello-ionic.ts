@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HelloIonicPage {
 
   tes = "can";
-  list = [[0,1]]
+  list = []
   command_names=[]
   function_list=[]
   function_command_names=[]  
