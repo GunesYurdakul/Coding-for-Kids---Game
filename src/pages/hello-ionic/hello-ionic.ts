@@ -5,7 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
+
+  tes = "can";
   constructor() {
 
   }
+
+  left() {
+    this.tes = "left"
+  }
+
 }

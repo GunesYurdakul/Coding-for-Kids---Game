@@ -21,31 +21,33 @@
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
+  <p>{{tes}}</p>
+
   <ion-card padding-vertical>
       
     <ion-list text-center>
         
     <button ion-button >
-      <ion-icon name="arrow-back"></ion-icon>
+      <ion-icon name="arrow-back" (click)="left()"></ion-icon>
     </button>
     
     <button ion-button>
-      <ion-icon name="arrow-forward"></ion-icon>
+      <ion-icon name="arrow-forward"(click)="right()"></ion-icon>
     </button>
 
     <button ion-button >
-      <ion-icon name="arrow-up"></ion-icon>
+      <ion-icon name="arrow-up"(click)="up()"></ion-icon>
     </button>
     
     <button ion-button>
-      <ion-icon name="arrow-down"></ion-icon>
+      <ion-icon name="arrow-down"(click)="down()"></ion-icon>
     </button>
 
-    <button ion-button color="blueCustom">
+    <button ion-button color="blueCustom"(click)="function()">
       <ion-icon name="albums"></ion-icon>
     </button>
     
-    <button ion-button color="secondary">
+    <button ion-button color="secondary"(click)="unlock()">
       <ion-icon name="unlock"></ion-icon>
     </button>
 </ion-list>
