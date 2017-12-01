@@ -54,6 +54,7 @@
 </ion-card>
 
 <ion-card padding-vertical (click)="set_function()">
+  <p>Function</p>
     <ion-list text-center>
       <button ion-button *ngFor="let item of function_command_names">
         <ion-icon name="{{item}}"></ion-icon>
@@ -62,6 +63,7 @@
   </ion-card>
 
 <ion-card padding-vertical (click)="reset_function()">
+    <p>Command</p>
   <ion-list text-center>
     <button ion-button *ngFor="let item of command_names">
       <ion-icon name="{{item}}"></ion-icon>
