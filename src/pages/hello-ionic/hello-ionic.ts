@@ -15,4 +15,23 @@ export class HelloIonicPage {
     this.tes = "left"
   }
 
+  right() {
+    this.tes = "right"
+  }
+
+  up() {
+    this.tes = "up"
+  }
+
+  down() {
+    this.tes = "down"
+  }
+
+  function() {
+    this.tes = "function"
+  }
+
+  unlock() {
+    this.tes = "unlock"
+  }
 }
