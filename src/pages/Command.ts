@@ -1,7 +1,7 @@
 class Command{
-    x = 0
-    y = 0
-    name=""
+    x:Number
+    y:Number
+    name:String
     constructor(y,x,name_in) {
       this.x=x
       this.y=y

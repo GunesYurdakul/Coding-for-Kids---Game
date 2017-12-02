@@ -7,66 +7,59 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
+  <div *ngFor="let row of blocks">
+    <img *ngFor="let col of row" [(src)]="col.img" style="padding-right:3px">
+  </div>
 
-  <h3>Welcome to your first Ionic app!</h3>
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  <button (click)="execute()">START!</button>
 
-<ion-card padding-vertical>
-      
-  <ion-list text-center>
-      
-    <button ion-button (click)="left()" >
-      <ion-icon name="arrow-back" ></ion-icon>
-    </button>
-    
-    <button ion-button (click)="right()">
-      <ion-icon name="arrow-forward"></ion-icon>
-    </button>
+  <ion-card padding-vertical>
 
-    <button ion-button (click)="up()" >
-      <ion-icon name="arrow-up"></ion-icon>
-    </button>
-    
-    <button ion-button (click)="down()">
-      <ion-icon name="arrow-down"></ion-icon>
-    </button>
-
-    <button ion-button color="blueCustom" (click)="function()">
-      <ion-icon name="albums"></ion-icon>
-    </button>
-    
-    <button ion-button color="secondary" (click)="unlock()">
-      <ion-icon name="unlock"></ion-icon>
-    </button>
-  </ion-list>
-</ion-card>
-
-<ion-card padding-vertical (click)="set_function()">
-  <p>Function</p>
     <ion-list text-center>
-      <button ion-button *ngFor="let item of function_command_names" color={{get_color(item)}} (click)="delete_function(item)" >
+
+      <button ion-button (click)="left()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+
+      <button ion-button (click)="right()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+
+      <button ion-button (click)="up()">
+        <ion-icon name="arrow-up"></ion-icon>
+      </button>
+
+      <button ion-button (click)="down()">
+        <ion-icon name="arrow-down"></ion-icon>
+      </button>
+
+      <button ion-button color="blueCustom" (click)="function()">
+        <ion-icon name="albums"></ion-icon>
+      </button>
+
+      <button ion-button color="secondary" (click)="unlock()">
+        <ion-icon name="unlock"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-card>
+
+  <ion-card padding-vertical (click)="set_function()">
+    <p>Function</p>
+    <ion-list text-center>
+      <button ion-button *ngFor="let item of function_command_names" color={{get_color(item)}} (click)="delete_function(item)">
         <ion-icon name="{{item}}"></ion-icon>
       </button>
     </ion-list>
   </ion-card>
 
-<ion-card padding-vertical (click)="reset_function()">
+  <ion-card padding-vertical (click)="reset_function()">
     <p>Command</p>
-  <ion-list text-center>
-    <button ion-button *ngFor="let item of command_names" color={{get_color(item)}} (click)="delete_command(item)" >
-      <ion-icon name="{{item}}"></ion-icon>
-    </button>
-  </ion-list>
-</ion-card>
+    <ion-list text-center>
+      <button ion-button *ngFor="let item of command_names" color={{get_color(item)}} (click)="delete_command(item)">
+        <ion-icon name="{{item}}"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-card>
 
 </ion-content>
