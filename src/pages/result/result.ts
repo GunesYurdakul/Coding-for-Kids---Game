@@ -21,7 +21,7 @@ export class ResultPage {
             this.navCtrl.push(HelloIonicPage, {
                 item: this.selectedItem[0]
               });  
-          }, 1000);
+          }, 2000);
     }
     else{
         this.image="assets/imgs/failure.jpeg"        
@@ -29,7 +29,7 @@ export class ResultPage {
             this.navCtrl.push(HelloIonicPage, {
                 item: this.selectedItem[0]
               });  
-          }, 1000);
+          }, 2000);
         
     }
   }
