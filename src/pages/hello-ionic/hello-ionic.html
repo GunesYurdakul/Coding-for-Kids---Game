@@ -7,19 +7,32 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding>
+
   <div *ngFor="let row of blocks" text-center>
     <img *ngFor="let col of row" [(src)]="col.img" style="padding-right:3px">
   </div>
-  <div text-center>
-  <button ion-button (click)="execute()" color="secondary" >
-      <ion-icon name="play"></ion-icon>      
-  </button>
-  </div>
+
   <ion-card padding-vertical>
 
     <ion-list text-center>
+      <button ion-button (click)="execute()" color="secondary">
+        <ion-icon name="play"></ion-icon>
+      </button>
 
+      <button ion-button color="blueCustom" (click)="function()">
+        <ion-icon name="albums"></ion-icon>
+      </button>
+
+      <button ion-button color="secondary" (click)="unlock()">
+        <ion-icon name="unlock"></ion-icon>
+      </button>
+
+      <button ion-button color="danger" (click)="loop()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-list>
+    <ion-list text-center>
       <button ion-button (click)="left()">
         <ion-icon name="arrow-back"></ion-icon>
       </button>
@@ -36,17 +49,6 @@
         <ion-icon name="arrow-down"></ion-icon>
       </button>
 
-      <button ion-button color="blueCustom" (click)="function()">
-        <ion-icon name="albums"></ion-icon>
-      </button>
-
-      <button ion-button color="secondary" (click)="unlock()">
-        <ion-icon name="unlock"></ion-icon>
-      </button>
-
-      <button ion-button color="secondary" (click)="loop()">
-          <ion-icon name="refresh"></ion-icon>
-        </button>
     </ion-list>
   </ion-card>
 
@@ -58,18 +60,18 @@
       </button>
     </ion-list>
   </ion-card>
- 
+
   <ion-card padding-vertical (click)="set_loop()">
-      <p>Loop</p>
-      <ion-list text-center>
-        <button ion-button item-left color="danger" (click)="set_loop_count()">
-          {{loop_count}} 
-        </button>
-        <button ion-button *ngFor="let item of loop_command_names" color={{get_color(item)}}>
-          <ion-icon name="{{item}}"></ion-icon>
-        </button>
-      </ion-list>
-    </ion-card>
+    <p>Loop</p>
+    <ion-list text-center>
+      <button ion-button item-left color="danger" (click)="set_loop_count()">
+        {{loop_count}}
+      </button>
+      <button ion-button *ngFor="let item of loop_command_names" color={{get_color(item)}}>
+        <ion-icon name="{{item}}"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-card>
 
   <ion-card padding-vertical (click)="reset_function()">
     <p>Command</p>

@@ -66,7 +66,7 @@ export class HelloIonicPage {
     this.blocks = this.levels[this.level]
   }
   move(y, x) {
-    if (!!this.blocks[this.y + y][this.x + x] && this.blocks[this.y + y][this.x + x].color !== "grey") {
+    if (!!this.blocks[this.y + y][this.x + x] && !!this.blocks[this.y][this.x] && this.blocks[this.y + y][this.x + x].color !== "grey") {
       this.blocks[this.y][this.x].deactivate()
       this.x = this.x + x
       this.y = this.y + y

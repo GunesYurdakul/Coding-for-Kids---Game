@@ -16,17 +16,15 @@ export class ResultPage {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
     if(this.selectedItem[1]){
-        this.image="assets/imgs/green.png"
+        this.image="assets/imgs/success.jpeg"
         var interval = setTimeout(() => {
             this.navCtrl.push(HelloIonicPage, {
                 item: this.selectedItem[0]
               });  
           }, 1000);
-        
-    
     }
     else{
-        this.image="assets/imgs/red.png"        
+        this.image="assets/imgs/failure.jpeg"        
         var interval = setTimeout(() => {
             this.navCtrl.push(HelloIonicPage, {
                 item: this.selectedItem[0]
