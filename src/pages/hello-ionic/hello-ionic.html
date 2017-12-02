@@ -51,9 +51,16 @@
 
     </ion-list>
   </ion-card>
+  
+  <ion-card padding-vertical (click)="reset_function()">
+      <ion-list text-center>
+        <button ion-button *ngFor="let item of command_names" color={{get_color(item)}} (click)="delete_command(item)">
+          <ion-icon name="{{item}}"></ion-icon>
+        </button>
+      </ion-list>
+    </ion-card>
 
   <ion-card padding-vertical (click)="set_function()">
-    <p>Function</p>
     <ion-list text-center>
       <button ion-button *ngFor="let item of function_command_names" color={{get_color(item)}} (click)="delete_function(item)">
         <ion-icon name="{{item}}"></ion-icon>
@@ -62,24 +69,16 @@
   </ion-card>
 
   <ion-card padding-vertical (click)="set_loop()">
-    <p>Loop</p>
     <ion-list text-center>
       <button ion-button item-left color="danger" (click)="set_loop_count()">
         {{loop_count}}
       </button>
-      <button ion-button *ngFor="let item of loop_command_names" color={{get_color(item)}}>
+      <button ion-button *ngFor="let item of loop_command_names" color={{get_color(item)}} (click)="delete_loop(item)>
         <ion-icon name="{{item}}"></ion-icon>
       </button>
     </ion-list>
   </ion-card>
 
-  <ion-card padding-vertical (click)="reset_function()">
-    <p>Command</p>
-    <ion-list text-center>
-      <button ion-button *ngFor="let item of command_names" color={{get_color(item)}} (click)="delete_command(item)">
-        <ion-icon name="{{item}}"></ion-icon>
-      </button>
-    </ion-list>
-  </ion-card>
+  
 
 </ion-content>

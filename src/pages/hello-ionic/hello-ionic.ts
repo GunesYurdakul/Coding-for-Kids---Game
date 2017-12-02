@@ -274,6 +274,14 @@ export class HelloIonicPage {
     this.list.splice(counter, 1)
   }
 
+  delete_loop(icon){
+    let counter = 0
+    while (this.loop_command_names[counter] != icon) {
+      counter++
+    }
+    this.loop_command_names.splice(counter, 1)
+    this.loop_list.splice(counter, 1)
+  }
   get_color(item) {
     if (item === "unlock")
       return "secondary"
