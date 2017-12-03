@@ -108,22 +108,24 @@ export class HelloIonicPage {
 
     this.list = []
     this.function_list = []
+    this.loop_list = []
 
     this.command_names = []
     this.function_command_names = []
+    this.loop_command_names = []
   }
 
   reshape() {
     if (this.list[0] === "function"){
       this.list.splice(0, 1)
-      for (let i = 0; i < this.function_list.length; i++) {
+      for (let i = this.function_list.length-1; i >= 0; i--) {
         this.list.unshift(this.function_list[i])
       }
     }
     else{
       this.list.splice(0, 1)
       for(let j = 0; j < this.loop_count; j ++){
-        for (let i = 0; i < this.loop_list.length; i++) {
+        for (let i = this.loop_list.length-1; i >= 0; i--) {
           this.list.unshift(this.loop_list[i])
         }
       } 
@@ -134,7 +136,7 @@ export class HelloIonicPage {
   execute() {
     var interval = setInterval(() => {
       if (this.list.length !== 0) {
-        if (this.list[0] === "function") {
+        if (this.list[0] === "function" || this.list[0] === "loop") {
           this.reshape()
         }
         let command = this.list[0]
@@ -228,30 +230,30 @@ export class HelloIonicPage {
   function() {
     if (this.is_function) {
       this.function_list.push("function");
-      this.function_command_names.push("albums");
+      this.function_command_names.push("list-box");
     }
     else if (this.is_loop) {
       this.loop_list.push("function");
-      this.loop_command_names.push("refresh");
+      this.loop_command_names.push("list-box");
     }
     else {
       this.list.push("function");
-      this.command_names.push("albums");
+      this.command_names.push("list-box");
     }
   }
 
   unlock() {
     if (this.is_function) {
       this.function_list.push([0, 0]);
-      this.function_command_names.push("unlock");
+      this.function_command_names.push("basket");
     }
     else if (this.is_loop) {
       this.loop_list.push([0, 0]);
-      this.loop_command_names.push("unlock");
+      this.loop_command_names.push("basket");
     }
     else {
       this.list.push([0, 0]);
-      this.command_names.push("unlock");
+      this.command_names.push("basket");
     }
 
   }
@@ -283,7 +285,7 @@ export class HelloIonicPage {
     this.loop_list.splice(counter, 1)
   }
   get_color(item) {
-    if (item === "unlock")
+    if (item === "basket")
       return "secondary"
 
     else if (item === "albums")
@@ -296,13 +298,13 @@ export class HelloIonicPage {
   loop() {
     if (this.is_function) {
       this.function_list.push("loop");
-      this.function_command_names.push("refresh");
+      this.function_command_names.push("repeat");
     }
     else if (this.is_loop) {
     }
     else {
       this.list.push("loop");
-      this.command_names.push("refresh");
+      this.command_names.push("repeat");
     }
 
   }
